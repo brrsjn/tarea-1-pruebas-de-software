@@ -3,6 +3,7 @@ import logging
 
 logging.basicConfig(
     filename='log.txt',
+    level=logging.INFO,
     format='%(asctime)s.%(msecs)03d %(levelname)s %(module)s - %(funcName)s: %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S',
 )
@@ -67,7 +68,7 @@ def nueva_pila():
         else:
             print ("Debes introducir un numero entre 1 y 2 o 0")
     pilas.append(pila)
-    logging.info("Pila creada \n")
+    logging.info("Pila creada")
 
 def seleccion_de_pila():
     while True:
@@ -113,8 +114,10 @@ def comparar_menu():
 
         if comparar_pilas(pilas[opcion1-1], pilas[opcion2-1]):
             print("Las secuencias de caracteres son iguales")
+            logging.info("Las secuencias de caracteres son iguales")
         else: 
             print("Las secuencias de caracteres son distintas")
+            logging.info("Las secuencias de caracteres son distintas")
         
         print("Elija que opcion seguir:")
 
@@ -130,7 +133,7 @@ def comparar_menu():
             salir = True
         else:
             print("Debes introducir un numero puede ser 1 o 0")
-    logging.info("Se han comparado secuencias. \n")
+    logging.info("Se han comparado secuencias.")
 
 def main():
     salir = False
